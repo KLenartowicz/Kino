@@ -1,0 +1,163 @@
+@keyframes ikona_move_in {
+    from { transform: rotate(0deg) scale(1) skew(1deg) translate(-113px); }
+    to { transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@keyframes ikona_move_out {
+    from { transform: rotate(0deg) scale(1) skew(1deg) translate(0px);}
+    to { transform: rotate(0deg) scale(1) skew(1deg) translate(-113px);}
+}
+  
+body {
+    margin: 0; 
+    padding: 0;
+    display: block;
+}
+
+.main-container {
+    width: 100%;
+    display: table;
+    margin: 0;
+    max-width: none;
+    background-color: lightgray;
+    height: 100vh;
+    font-family: 'Roboto Slab', serif;
+}
+
+.menu-container {
+    float: left;
+    width: 10vw;
+    height: 100%;
+    background-color: #373B44;
+}
+
+.ikona {
+    display: block;
+    cursor: pointer;
+}
+
+.ikona i{
+    font-size: 6vw;
+    margin: 1vh 0 0 2vw;
+    color: gray;
+}
+
+.ikona .podpis{
+    margin: 0 0 2vh 0;
+    font-size: 1vw;
+    text-align: center;
+    color: gray;
+}
+
+.menu-container:hover .podpis {
+    animation: ikona_move_in 0.3s 1 ease-in;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+ 
+}
+
+.podpis {
+    animation: ikona_move_out 0.3s 1 ease-out;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.ikona:hover i, .ikona:hover .podpis{
+    color: white;
+}
+
+.poster-container img{
+    float: right;
+    width: 90vw;
+    height: 100%;
+}
+
+.poster-container{
+    width: 90vw;
+    height: 35vw;
+    float: right;
+    position: relative;
+    text-align: center;
+    color: white;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.title {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    font-size: 4vmin;
+}
+
+.genere {
+    position: absolute;
+    top: 82%;
+    left: 5%;
+    font-size: 2.5vmin;
+}
+
+.next {
+    position: absolute;
+    border: solid gray;
+    border-width: 0 1vh 1vh 0;
+    display: inline-block;
+    padding: 1vh;
+    transform: rotate(-45deg);
+    right: 5%;
+    bottom: 50%;
+}
+
+.next:hover {
+    border: solid white;
+    border-width: 0 1vh 1vh 0;
+    padding: 1vh;
+}
+
+.content-container {
+    width: 90vw;
+    display: inline-block;
+    text-align: center;
+}
+
+.content-container button {
+    box-shadow: 3px 3px 4px 2px rgba(0,0,0,0.35);
+    background: darkgray;
+    font: gray;
+    border: none;
+    border-radius: 5%;
+    width: 20vw;
+    max-width: 150px;;
+    height: 3vh;
+    margin:0 1vw;
+}
+
+.content-container button:hover {
+    background: #4CAF50;
+}
+
+.content-container .cancel:hover {
+    background: rgb(214, 46, 46);
+}
+
+.content-container input {
+    width: 25vw;
+    max-width: 150px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid darkgray;
+}
+
+.content-container input:focus {
+    outline-width: 0;
+}
+
+.content-container i{
+    vertical-align: middle;
+    color: gray;
+    margin: 0 10px;
+}
+
+.error {
+    color: red;
+    font-size: 70%;
+}

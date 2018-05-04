@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+    
+
+    <title>Document</title>
+</head>
+<body ng-app="Cinema">
+    
+
+    <div class="main-container" ng-controller="buttonController">
+        <div class = "poster-container">
+            <img src = "{{image}}">
+            <div class = "title">{{title}}</div>
+            <div class = "genere">{{genere}}</div>
+            <div class = "next" ng-click="posterControll()"></div>
+        </div>
+        <div class = "menu-container">
+            <div class = "ikona">
+                <i class = "material-icons">home</i>   
+                <p class = "podpis">STRONA GŁÓWNA</p>
+            </div>
+            <div class = "ikona">
+                <i class="material-icons">date_range</i>
+                <p class = "podpis">REPERTUAR</p>
+            </div>
+            <div class = "ikona">
+                <i class="material-icons">phone</i>  
+                <p class = "podpis">KONTAKT</p>
+            </div>
+            <div class = "ikona"  ng-click='showLoginContent()' ng-show = "!loggedIn"> 
+                <i class="material-icons">account_box</i>
+                <p class = "podpis">ZALOGUJ SIĘ</p>
+            </div>
+            <div class = "ikona"  ng-click='logOut()' ng-show = "loggedIn"> 
+                <i class="material-icons">account_box</i>
+                <p class = "podpis">WYLOGUJ SIĘ</p>
+            </div>
+            <div class = "ikona">
+                    <i class="material-icons">supervisor_account</i> 
+                    <p class = "podpis">PANEL ADMINISTRATORA</p>
+            </div>
+        </div>
+        <div class = "content-container">
+            <login-directive ng-show="loginShow"></login-directive>
+            <register-directive ng-show="registerShow"></register-directive>
+        </div>
+    </div>
+ <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+    var config = {
+        apiKey: "AIzaSyDMFNCwhNqsnI_-jtgBE2TdOv8Wpg5BUTg",
+        authDomain: "projekt-polibuda.firebaseapp.com",
+        databaseURL: "https://projekt-polibuda.firebaseio.com",
+        projectId: "projekt-polibuda",
+        storageBucket: "projekt-polibuda.appspot.com",
+        messagingSenderId: "943447843053"
+    };
+        firebase.initializeApp(config);
+    </script>
+    <script src = "app.js"></script>
+    <script src = "login.directive.js"></script>
+    <script src = "button.controller.js"></script>
+    <script src = "register.controller.js"></script>
+    <script src = "register.directive.js"></script>
+</body>
+</html>
